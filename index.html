@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- font start  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- font ends  -->
+    <!-- owl-carousel starts  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- owl-carousel ends  -->
+    <!-- <script src="test.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+       .glassmorphism-service{
+        background: rgba( 255, 255, 255, 0.5 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+       }
+       .product-card{
+        background: rgba( 255, 255, 255, 0.5 );
+        box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+       }
+       .inner-team{
+           display: none;
+       }
+       .upper-team:hover .inner-team{
+           display: block;
+       }
+    </style>
+</head>
+<body class="font-['Rubik']">
+    <!-- upper nav starts  -->
+   <section class="fixed top-0 left-0 right-0 z-10 hidden bg-blue-400 md:block" >
+        <div class="flex justify-between p-2 px-32 text-white" id="topbar">
+            <div class="space-x-2">
+                <h1 class="inline"><i class="text-lg text-yellow-400 fas fa-envelope"></i> &nbsp; example@gmail.com</h1>
+                <h1 class="inline"><i class="text-lg text-yellow-400 fas fa-phone-alt"></i> &nbsp; 555-888-2222</h1>
+            </div>
+            <div class="space-x-3 text-lg text-yellow-400">
+                <i class="fab fa-facebook-f"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i> <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+   </section>
+
+
+    <!-- upper nav ends  -->
+
+<!-- navigation bar starts      -->
+    <nav class="fixed left-0 right-0 z-10 hidden bg-blue-900 shadow md:block top-10" id="nav">
+        <div class="flex justify-between px-4 py-4 lg:px-36">
+            <h1 class="text-2xl font-bold text-white">
+                VETGHAT
+            </h1>
+            <ul class="space-x-0 text-md P-2 xl:space-x-3">
+                <li class="inline p-2 font-light text-white"><a href="#">HOME</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#about">ABOUT</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#service">SERVICE</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#team">TEAM</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#product">PRODUCT</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#testimonil">TESTIMONILS</a></li>
+                <li class="inline p-2 font-light text-white"><a href="#contact">CONTACT</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+    
+    <nav class="fixed top-0 left-0 right-0 z-10 text-white bg-blue-900 shadow md:hidden">
+        <div class="px-10 py-4">
+           <div class="flex justify-between">
+            <h1 class="text-2xl font-bold uppercase">VETGHAT</h1>
+           <a href="#" onclick="mobNav()">
+            <i class="fas fa-bars" id="mobopen"></i>
+            <i class="fas fa-times" id="mobclose"></i>
+            </a>
+           </div>
+           <div id="mobnav" class="absolute opacity-70 top-0 left-0 w-[80%] bg-blue-900 rounded-xl p-2 text-2xl pt-14 px-10 z-20">
+            <ul>
+                <li class="p-2 font-bold"><a href="#home" >HOME</a></li>
+                <li class="p-2 font-bold"><a href="#about" >ABOUT</a></li>
+                <li class="p-2 font-bold"><a href="#service" >SERVICE</a></li>
+                <li class="p-2 font-bold"><a href="#team" >TEAM</a></li>
+                <li class="p-2 font-bold"><a href="#product" >PRODUCT</a></li>
+                <li class="p-2 font-bold"><a href="#testimonil" >TESTIMONILS</a></li>
+                <li class="p-2 font-bold"><a href="#contact" >CONTACT</a></li>
+            </ul>
+           </div>
+
+        </div>
+
+    </nav>
+
+    <!-- navigation bar end  -->
+    <!-- Home section starts  -->
+    <section class="home font-['Roboto'] md:mt-[6.5rem]" id="home">
+        <div class="owl-carousel owl-home">
+        <div class="bg-[url('img/slider-1.jpg')] w-full bg-cover bg-center bg-no-repeat item">
+            <h1 class="w-20 px-20 py-48 font-medium text-white bg-black shadow md:px-32 text-7xl opacity-60">Welcome To Bhetghat</h1>
+        </div>
+        <div class="bg-[url('img/slider-2.jpg')] w-full bg-cover bg-center bg-no-repeat item">
+            <h1 class="w-20 px-20 py-48 font-medium text-white bg-black shadow md:px-32 text-7xl opacity-60">Welcome To Bhetghat</h1>
+        </div>
+        </div>
+
+
+    </section>
+    <!-- Home section ends  -->
+    <!-- About section starts  -->
+    <section class="about font-['Rubik']" id="about">
+        <div class="px-12 py-10 sm:px-32">
+            <div class="grid lg:grid-cols-2">
+                <div class="my-4 mt-24">
+                    <p><span class="p-2 text-white bg-red-900 rounded-lg"> WE ARE </span></p>
+                    <h1 class="mt-5 text-4xl font-bold text-black ">The Food Resturant</h1>
+                    <p class="my-4 text-gray-400 text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="my-4 text-gray-400 text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo.</p>
+                    <p class="my-4 text-gray-400 text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elie.</p>
+                    <div class="mx-12 mt-8"><a href="#" class="px-4 py-3 text-lg text-red-900 border-2 border-red-800 rounded-lg hover:bg-red-900 hover:text-white">Read More</a></div>
+                </div>
+                <div class="px-10">
+                    <img src="img/about.jpg" alt="about image" class="w-75">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- About section ends  -->
+    <!-- service section starts  -->
+
+    <section class=" text-[#66755f] " id="service">
+        <div class="px-8 py-16 sm:px-16 md:px-8 xl:px-32">
+            <h1 class="text-center text-green-600 text-md">OUR SERVICE</h1>
+            <h2 class="py-3 text-4xl font-bold text-center text-blue-600">What We Do</h2>
+            <p class="py-2 text-center text-gray-400 text-md">Lorem Ipsum is not simply random text. It has roots in a piece of <br> classical at Hampden-Sydney College.</p>
+
+            <div class="grid gap-8 py-8 lg:grid-cols-3 md:grid-cols-2">
+                <div class="glassmorphism-service">
+                    <img src="img/5.jpg" alt="" class="w-full">
+                    <div class="py-4">
+                       <div class="flex px-8 py-4 space-x-6">
+                            <i class="py-5 text-3xl text-white bg-green-400 rounded-full px-7 fas fa-utensils"></i>
+                            <h1 class="mt-4 text-xl font-bold text-blue-900 cursor-pointer hover:text-green-600">LUXURIUS DINNING EXPERIENCES</h1>
+                       </div>
+                        <p class="px-8 text-gray-500 text-md">Lorem ipsum dolor sit amet elit , consectetur adipiscing , sed eiusmod tempor dolor.</p>
+                    </div>
+                </div>
+
+                <div class="glassmorphism-service">
+                    <img src="img/4.jpg" alt="" class="w-full">
+                    <div class="py-4">
+                       <div class="flex px-8 py-4 space-x-6">
+                            <i class="px-6 py-5 text-3xl text-white bg-green-400 rounded-full fas fa-home "></i>
+                            <h1 class="mt-4 text-xl font-bold text-blue-900 cursor-pointer hover:text-green-600">LUXURIUS ROOM AVAILABLE</h1>
+                       </div>
+                        <p class="px-8 text-gray-500 text-md">Lorem ipsum dolor sit amet elit , consectetur adipiscing , sed eiusmod tempor dolor.</p>
+                    </div>
+                </div>
+
+                <div class="glassmorphism-service">
+                    <img src="img/3.jpg" alt="" class="w-full">
+                    <div class="py-4">
+                       <div class="flex px-8 py-4 space-x-6">
+                            <i class="px-6 py-6 text-2xl text-white bg-green-400 rounded-full fas fa-wifi"></i>
+                            <h1 class="mt-4 text-xl font-bold text-blue-900 cursor-pointer hover:text-green-600">FREE WIFI AVAILABLE</h1>
+                       </div>
+                        <p class="px-8 text-gray-500 text-md">Lorem ipsum dolor sit amet elit , consectetur adipiscing , sed eiusmod tempor dolor.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </section>
+    <!-- service section ends  -->
+    <!-- Product section starts  -->
+    <section id="product">
+        <div class="px-8 py-10 sm:px-32 sm:py-20">
+            <h1 class="text-xl font-bold text-center text-gray-800 sm:mt-6">Our Featured Product</h1>
+            <p class="my-4 font-light text-center text-blue-800 text-md sm:my-8">Lorem Ipsum is not simply random text. It has roots in a piece of <br> classical at Hampden-Sydney College.</p>
+            <p class="text-gray-400 text-md">We offer different variety foods...........</p>
+
+            <div class="mt-10 owl-carousel owl-theme sm:mt-16">
+                <div class="p-2 item">
+                    <img src="img/big-burger-isolated-white-43062448 (1).jpg" alt="" class="w-full rounded-t-lg">
+                    <h1 class="py-3 text-xl font-bold text-center text-blue-800 product-card">Buff Chowmin</h1>
+                </div>
+                <div class="p-2 item">
+                    <img src="img/dhido-3 (2).jpg" alt="" class="w-full rounded-t-lg">
+                    <h1 class="py-3 text-xl font-bold text-center text-blue-800 product-card">Buff Chowmin</h1>
+                </div>
+                <div class="p-2 item">
+                    <img src="img/Food-Pizza-Basil-Tomato.jpg" alt="" class="w-full rounded-t-lg">
+                    <h1 class="py-3 text-xl font-bold text-center text-blue-800 product-card">Buff Chowmin</h1>
+                </div>
+                <div class="p-2 item">
+                    <img src="img/newari khaja set.jpg" alt="" class="w-full rounded-t-lg">
+                    <h1 class="py-3 text-xl font-bold text-center text-blue-800 product-card">Buff Chowmin</h1>
+                </div>
+                <div class="p-2 item">
+                    <img src="img/chicken chowmin (1).jpg" alt="" class="w-full rounded-t-lg">
+                    <h1 class="py-3 text-xl font-bold text-center text-blue-800 product-card">Buff Chowmin</h1>
+                </div>
+                
+                
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- product section ends  -->
+
+    <!-- team section starts  -->
+
+    <section id="team">
+        <div class="px-12 py-16 md:px-32 xl:32 sm:px-28">
+            <h1 class="my-2 text-xl text-center text-green-400">Our Team Member</h1>
+            <h1 class="my-3 text-3xl font-bold text-center text-blue-800">Meet Staffs</h1>
+            <p class="text-center text-gray-400 text-md">Lorem Ipsum is not simply random text. It has roots in a piece of <br> classical at Hampden-Sydney College.</p>
+            <div class="grid gap-8 mt-10 xl:grid-cols-4 md:grid-cols-2">
+                <div class="upper-team">
+                    <img src="img/1.jpg" alt="team1" class="relative w-full">
+                    <div class="absolute w-48 px-4 py-10 ml-16 -mt-48 bg-green-400 lg:w-60 md:w-48 sm:w-72 inner-team rounded-3xl sm:ml-20 md:ml-14 xl:w-40 xl:py-4 xl:-mt-40">
+                        <h1 class="my-2 text-xl font-bold text-center text-white">Abdul Aziz</h1>
+                        <p class="text-lg text-center text-white">Lead Farmer</p>
+                        <div class="mx-2 text-xl text-center text-white"><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"> <i class="fab fa-google"></i></i></div>
+                    </div>
+                </div>
+                <div class="upper-team">
+                    <img src="img/2.jpg" alt="team1" class="relative w-full">
+                    <div class="absolute w-48 px-4 py-10 ml-12 -mt-48 bg-green-400 lg:w-60 md:w-48 sm:w-72 inner-team rounded-3xl sm:ml-20 md:ml-12 xl:w-40 xl:py-4 xl:-mt-40">
+                        <h1 class="my-2 text-xl font-bold text-center text-white">Abdul Aziz</h1>
+                        <p class="text-lg text-center text-white">Lead Farmer</p>
+                        <div class="mx-2 text-xl text-center text-white"><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"> <i class="fab fa-google"></i></i></div>
+                    </div>
+                </div>
+                <div class="upper-team">
+                    <img src="img/3 (1).jpg" alt="team1" class="relative w-full">
+                    <div class="absolute w-48 px-4 py-10 ml-12 -mt-48 bg-green-400 lg:w-60 md:w-48 sm:w-72 inner-team rounded-3xl sm:ml-20 md:ml-12 xl:w-40 xl:py-4 xl:-mt-40">
+                        <h1 class="my-2 text-xl font-bold text-center text-white">Abdul Aziz</h1>
+                        <p class="text-lg text-center text-white">Lead Farmer</p>
+                        <div class="mx-2 text-xl text-center text-white"><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"> <i class="fab fa-google"></i></i></div>
+                    </div>
+                </div>
+                <div class="upper-team">
+                    <img src="img/4 (1).jpg" alt="team1" class="relative w-full">
+                    <div class="absolute w-48 px-4 py-10 ml-12 -mt-48 bg-green-400 lg:w-60 md:w-48 sm:w-72 inner-team rounded-3xl sm:ml-20 md:ml-12 xl:w-40 xl:py-4 xl:-mt-40">
+                        <h1 class="my-2 text-xl font-bold text-center text-white">Abdul Aziz</h1>
+                        <p class="text-lg text-center text-white">Lead Farmer</p>
+                        <div class="mx-2 text-xl text-center text-white"><i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"> <i class="fab fa-google"></i></i></div>
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- team section ends  -->
+    <!-- client number section starts  -->
+    <section>
+        <div class="px-32 py-10">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 numbers">
+                <div class="p-4">
+                    <div class="text-center"> <i class="text-6xl text-yellow-400 fas fa-user-secret"></i></div>
+                    <h2 class="py-2 text-4xl font-bold text-center text-blue-900 count">10532</h2>
+                    <p class="text-lg font-bold text-center text-gray-400 ">Satisfied Students</p>
+                </div>
+    
+                <div class="p-4">
+                    <div class="text-center"> <i class="text-6xl text-yellow-400 fas fa-book-open"></i></div>
+                    <h2 class="py-2 text-4xl font-bold text-center text-blue-900 count">10532</h2>
+                    <p class="text-lg font-bold text-center text-gray-400 ">Satisfied Students</p>
+                </div>
+    
+                <div class="p-4">
+                    <div class="text-center"> <i class="text-6xl text-yellow-400 fas fa-trophy"></i></div>
+                    <h2 class="py-2 text-4xl font-bold text-center text-blue-900 count">10532</h2>
+                    <p class="text-lg font-bold text-center text-gray-400 ">Satisfied Students</p>
+                </div>
+    
+                <div class="p-4">
+                    <div class="text-center"> <i class="text-6xl text-yellow-400 fas fa-pen"></i></div>
+                    <h2 class="py-2 text-4xl font-bold text-center text-blue-900 count">10532</h2>
+                    <p class="text-lg font-bold text-center text-gray-400 ">Satisfied Students</p>
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+    <!-- client number section ends -->
+
+<!-- testimonil section starts  -->
+<section id="testimonil" class="">
+    <div class="bg-[url('img/restaurent.jpg')] bg-fixed bg-cover bg-no-repeat bg-center w-full h-screen ">
+       <div class="pt-10 text-center md:pt-28"><a class="p-2 text-lg font-bold text-white bg-red-700 rounded-md bg-red">TESTIMONIALS</a></div>
+       <h1 class="mt-6 text-3xl font-bold text-center text-white">They Love Us</h1>
+
+       <div class="my-10 slider">
+           <div class="text-center  item">
+               <img src="img/testimonial-1.jpg" alt="" class="m-auto border-4 border-white rounded-full">
+               <p class="mt-4 text-lg font-bold text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo est in dolorem id, natus amet minus <br> culpa officiis excepturi! Corporis hic minima totam enim ad!</p>
+               <h1 class="mt-8 text-xl text-white font-bod">Rose Hopkins</h1>
+               <h2 class="mt-2 text-lg font-semibold text-white">Founder of .......</h2>
+               <div class="m-2 mt-4 text-lg ">
+                   <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i>
+               </div>
+           </div>
+
+           <div class="text-center  item">
+            <img src="img/testimonial-2.jpg" alt="" class="m-auto border-4 border-white rounded-full">
+            <p class="mt-4 text-lg font-bold text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo est in dolorem id, natus amet minus <br> culpa officiis excepturi! Corporis hic minima totam enim ad!</p>
+            <h1 class="mt-8 text-xl text-white font-bod">Rose Hopkins</h1>
+            <h2 class="mt-2 text-lg font-semibold text-white">Founder of .......</h2>
+            <div class="m-2 mt-4 text-xl ">
+                <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="text-center  item">
+            <img src="img/testimonial-3.jpg" alt="" class="m-auto border-4 border-white rounded-full">
+            <p class="mt-4 text-lg font-bold text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo est in dolorem id, natus amet minus <br> culpa officiis excepturi! Corporis hic minima totam enim ad!</p>
+            <h1 class="mt-8 text-xl text-white font-bod">Rose Hopkins</h1>
+            <h2 class="mt-2 text-lg font-semibold text-white">Founder of .......</h2>
+            <div class="m-2 mt-4 text-xl ">
+                <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="text-center  item">
+            <img src="img/testimonial-4.jpg" alt="" class="m-auto border-4 border-white rounded-full">
+            <p class="mt-4 text-lg font-bold text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo est in dolorem id, natus amet minus <br> culpa officiis excepturi! Corporis hic minima totam enim ad!</p>
+            <h1 class="mt-8 text-xl text-white font-bod">Rose Hopkins</h1>
+            <h2 class="mt-2 text-lg font-semibold text-white">Founder of .......</h2>
+            <div class="m-1 mt-4 text-xl ">
+                <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i> <i class="text-yellow-400 fas fa-star"></i>
+            </div>
+        </div>
+       </div>
+
+    </div>
+
+</section>
+<!-- testimonil section ends  -->
+
+<!-- contact section starts  -->
+<section class="bg-red-100 contact" id="contact">
+    <div class="px-8 lg:px-32 md:py-28 py-14 md:px-14 ">
+        <h1 class="font-light text-center text-green-400 text-md">GET IN TOUCH</h1>
+        <h2 class="mt-3 text-3xl font-bold text-center text-blue-900">Contact Us</h2>
+        <p class="mt-2 text-sm text-center text-gray-600">Lorem Ipsum is not simply random text. It has roots in a piece of <br> classical at Hampden-Sydney College.</p>
+        <div class="grid md:grid-cols-2">
+            <div class="mt-10">
+                <h1 class="text-2xl font-bold text-blue-900">Get a Free Quote</h1>
+                <div class="mt-8">
+                    <form action="">
+                        <div class="mt-5">
+                            <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-100 shadow outline-none rounded-2xl">
+                        </div>
+                        <div class="mt-5">
+                            <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-100 shadow outline-none rounded-2xl">
+                        </div>
+                        <div class="mt-5">
+                            <textarea name="" id="" rows="4" placeholder="Your Message" class="w-full p-4 bg-gray-100 shadow outline-none rounded-2xl"></textarea>
+                        </div>
+                    </form>
+                </div>
+               <div class="w-full p-3 mt-5 text-center bg-green-400 rounded-xl"><button class="text-lg font-bold text-white  hover:text-blue-900">Send Message</button></div>
+            </div>
+
+            <div class="p-2 md:p-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d224703.93429250005!2d84.10104924999999!3d28.358880650000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1645789532956!5m2!1sen!2snp"  height="440" style="border:0;" allowfullscreen="" loading="lazy" class="w-full"></iframe>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- contact section ends  -->
+
+<!-- footer section starts  -->
+<section class=" text-white bg-[#002147] footer">
+
+    <div class="px-12 md:px-32 pt-28">
+        <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
+            <div class="px-4">
+                <h1 class="text-3xl font-bold"><i class="fas fa-hotel text-[#fbc800]"></i> About Us</h1>
+                <p class="py-2">Sorem ipsum dolor sit amet conse ctetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercition ullamco laboris nisi</p>
+                
+            </div>
+
+            <div class="px-4">
+                <h2 class="text-2xl font-bold text-yellow-400">Contact Us</h2>
+               <div class="pt-6">
+                <p class="py-1 space-x-1"><i class="text-yellow-400 fas fa-music"></i><span> +003 (1234) 7894</span></p>
+                <p class="py-1 space-x-1"><i class="text-yellow-400 far fa-envelope"></i> <span>youremail@gmail.com</span></p>
+                <p class="py-1 space-x-1"><i class="text-yellow-400 fas fa-map-marker-alt"></i> <span>123 New Street, 6th Floor, New York</span></p>
+        
+               </div>
+            </div>
+
+            <div class="px-4">
+                <div class=""><h2 class="text-2xl font-bold text-yellow-400">Quick Links</h2></div>
+                <div class="py-3">
+                    <div class="px-2 font-bold text-md">
+                        <p class="py-1 hover:text-yellow-400"> <i class="fas fa-angle-right"></i> <a href="#home">HOME</a></p>
+                        <p class="py-1 hover:text-yellow-400"> <i class="fas fa-angle-right"></i> <a href="#about">ABOUT</a></p>
+                        <p class="py-1 hover:text-yellow-400"> <i class="fas fa-angle-right"></i> <a href="#service">SERVICE</a></p>
+                        <p class="py-1 hover:text-yellow-400"> <i class="fas fa-angle-right"></i> <a href="#team">TEAM</a></p>
+                        <p class="py-1 hover:text-yellow-400"> <i class="fas fa-angle-right"></i> <a href="#product">PRODUCT</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-4">
+                <h1 class="text-2xl font-bold text-yellow-400">Follow Us</h1>
+                <p class="py-3">Sed congue nisl dolorSed congue nisl dolor, id dapibus leo elementum posuere.</p>
+                <div class="space-x-2 text-xl"><i class="fab fa-facebook-square"></i> <i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i> <i class="fab fa-google"></i> <i class="fas fa-globe"></i></div>
+
+            </div>
+
+           
+
+        </div>
+
+
+    </div>
+    <div class="px-8 py-10 md:px-32 ">
+        <div class="border-t-2 last-footer">
+            <h2 class="mt-4 text-center text-md">Copyright &copy; <a href="https://www.bitmapitsolution.com/" class="text-yellow-400 text-md">Bitmap I.T Solution Pvt.Ltd</a> 2022. All rights reserved</h2>
+            <h2 class="p-0 m-0 text-center">Designed by Jeshan Tiwari</h2>
+        </div>
+
+    </div>
+
+</section>
+<!-- footer section ends  -->
+<div class="fixed bottom-10 right-6" id="upbutton" onclick="gototop()">
+    <a href="#home"><i class="p-6 text-xl text-white bg-yellow-400 rounded-full fas fa-angle-double-up text-bold"></i></a>
+</div>
+
+
+
+
+
+
+
+    <!-- all script starts  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <script>
+        
+        var owl = $('.owl-home');
+        owl.owlCarousel({
+            items:1,
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+
+        });
+
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+    </script>
+
+    <script>
+        
+        $('.slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: false,
+        nextArrow:false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        });
+    </script>
+
+  
+
+
+    <script>
+        var section = document.querySelector('.numbers');
+        var hasEntered = false;
+
+        window.addEventListener('scroll', (e) => {
+            var shouldAnimate = (window.scrollY + window.innerHeight) >= section.offsetTop;
+
+            if (shouldAnimate && !hasEntered) {
+            hasEntered = true;
+
+
+        $('.count').each(function () {
+            $(this).prop('Counter',100).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+        }
+        });
+
+
+
+        var mob = document.getElementById('mobnav');
+        var mobc = document.getElementById('mobclose');
+        var mobo = document.getElementById('mobopen');
+
+        mob.style.marginLeft = "-110%";
+        mobc.style.display = 'none';
+        
+        function mobNav(){
+            if( mob.style.marginLeft == "-110%"){
+                mob.style.marginLeft = "0px";
+                mob.style.transition = "0.8s";
+                mobc.style.display = 'block';
+                mobo.style.display = 'none';
+            }
+            else{
+                mob.style.marginLeft = "-110%";
+                mobc.style.display = 'none';
+                mobo.style.display = 'block';
+                mob.style.transition = "0.8s";
+
+            }
+        }
+
+        var upbutton = document.getElementById('upbutton');
+        var topbar = document.getElementById('topbar');
+        var nav = document.getElementById('nav');
+        upbutton.style.display ='none';
+        window.onscroll = function()
+        {
+            scrollFunction();
+        }
+        function scrollFunction(){
+            if(window.scrollY > 640)
+            {
+                upbutton.style.display = 'block';
+                topbar.style.display = 'none';
+                nav.classList.remove("top-10");
+                nav.classList.add('top-0');
+            }
+            else{
+                upbutton.style.display = 'none';
+                topbar.style.display = 'flex';
+                nav.classList.add("top-10");
+                nav.classList.remove('top-0');
+            }
+        }
+        function gototop()
+        {
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+
+
+    </script>
+    <!-- all script ends  -->
+</body>
+</html>
