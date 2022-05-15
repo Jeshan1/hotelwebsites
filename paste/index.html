@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select option checking</title>
+    <script src="test.js"></script>
+</head>
+<body class="mt-5 text-center">
+
+    <!-- select option section starts  -->
+
+    <select name="" id="select" onchange="paste()" class="border">
+        <option value="imepay">Imepay</option>
+        <option value="esewa">Esewa</option>
+        <option value="fonepay">Fonepay</option>
+        <option value="khalti">khalti</option>
+    </select>
+
+    <p><span id="payName" class="uppercase">Fonepay</span> : <span id="payNum">9825241789</span></p>
+
+    <!-- select option section ends  -->
+    
+    <!-- js part starts  -->
+
+    <script>
+       function paste(){
+        var select = document.getElementById('select');
+        var option = select.options[select.selectedIndex];
+        document.getElementById('payName').innerHTML = option.text;
+        var num = document.getElementById('payNum');
+
+        if(option.text=='Imepay'){
+            num.innerHTML = '9856741236';
+        }
+
+        else if(option.text=='Esewa'){
+            num.innerHTML = '9865731829';
+        }
+
+        else if(option.text=='khalti'){
+            num.innerHTML = '9856739815';
+        }
+        else{
+            num.innerHTML = '9825241789';
+        }
+       }
+    </script>
+
+
+
+
+    <!-- js part ends  -->
+
+    
+</body>
+</html>
